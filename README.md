@@ -5,3 +5,11 @@
 ------------------------------------
 
 * https://css-tricks.com/getting-netlify-large-media-going/
+
+-------------------------------------
+
+* https://www.sanity.io/blog/first-class-responsive-video-support-with-the-new-mux-plugin
+
+----------------------------------
+
+* [netlify cms -- file widget](https://www.netlifycms.org/docs/widgets/#file)
