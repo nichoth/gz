@@ -111,5 +111,4 @@ bundle.js
 .netlify
 
 public/video/
-public/admin/config.yml public/admin/index.html
-public/admin/
+
