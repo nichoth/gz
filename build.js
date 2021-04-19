@@ -14,6 +14,7 @@ buildThem(
 )
 
 // a fn that returns a hs instance
+// this runs once per source file
 function makeHs (file, baseName) {
     return hyperstream({
         body: {
@@ -44,7 +45,6 @@ function buildThem (inputDir, outputDir, templateFile, makeHs) {
                 mkdirp.sync(outFileDir)
 
                 var hs = makeHs(file, baseName)
-
                 var ws = fs.createWriteStream(outFileDir + '/index.html')
                 var rs = fs.createReadStream(templateFile)
 
@@ -52,6 +52,8 @@ function buildThem (inputDir, outputDir, templateFile, makeHs) {
             })
         })
 
+        // run this once for all files -- for the index page
+        // we need the all the files so we can make the nav
         var hs = hyperstream({
             '#content': {
                 _appendHtml: `<ul class="main-nav">
@@ -62,11 +64,9 @@ function buildThem (inputDir, outputDir, templateFile, makeHs) {
             }
         })
 
-        var outFileDir = __dirname + '/public'
-        var ws = fs.createWriteStream(outFileDir + '/index.html')
+        var ws = fs.createWriteStream(__dirname + '/public' + '/index.html')
         var rs = fs.createReadStream(templatePath)
         rs.pipe(hs).pipe(ws)
     })
 
 }
-
