@@ -61,6 +61,7 @@ function buildThem (inputDir, outputDir, templateFile, makeHs) {
                 </ul>`
             }
         })
+
         var outFileDir = __dirname + '/public'
         var ws = fs.createWriteStream(outFileDir + '/index.html')
         var rs = fs.createReadStream(templatePath)
