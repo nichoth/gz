@@ -1,5 +1,13 @@
 title: about things
-intro: this is the about body text
+intro: |-
+  this is the about body text
+
+  # wooo
+
+  ok some text
+
+
+  ## ok again
 team:
   - name: foooo
     position: barrrr
