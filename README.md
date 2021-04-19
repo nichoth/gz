@@ -17,3 +17,7 @@
 ------------------------------------
 
 * [file collections](https://www.netlifycms.org/docs/collection-types/#file-collections)
+
+
+* https://www.netlifycms.org/docs/configuration-options/#collections
+
