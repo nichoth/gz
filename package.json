@@ -18,10 +18,12 @@
     "dependency-check": "^4.1.0",
     "eslint": "^7.24.0",
     "eslint-config-minlint": "^2.0.0",
+    "esmify": "^2.1.1",
     "gray-matter": "^4.0.2",
     "hyperstream": "^1.2.2",
     "marked": "^2.0.3",
     "mkdirp": "^1.0.4",
+    "sass": "^1.32.10",
     "tap-spec": "^5.0.0",
     "tape": "^5.2.2"
   }
