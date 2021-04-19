@@ -28,8 +28,9 @@ function makeHs (file, baseName) {
 
 function buildThem (inputDir, outputDir, templateFile, makeHs) {
     fs.readdir(inputDir, function (err, files) {
-        if (err) throw err
+        if (err) return
         console.log('files:  ', files)
+        if (!files.length) return
 
         var names = []
         files.forEach(fileName => {
