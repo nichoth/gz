@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run sass-watch\"",
+    "copy": "mkdir -p public && mkdir -p public/uploads && mkdir -p public/admin && cp src/admin/* public/admin && cp src/index.html public && cp src/uploads/* public/uploads",
+    "serve": "budo src/index.js:bundle.js --dir=public --live --open -- -p esmify --debug",
+    "build": "npm run copy && node build.js && npm run sass && npm run build-js",
+    "build-js": "browserify --debug -p esmify src/index.js > public/bundle.js ",
+    "sass": "sass ./src/style/style.scss ./public/style.css",
+    "sass-watch": "sass --watch src/style:public",
+    "preversion": "npm run lint && npm run deps && npm test",
+    "postversion": "git push && git push --tags",
+    "lint": "eslint .",
+    "deps": "dependency-check package.json && dependency-check package.json --unused --entry test/*.js -i dependency-check -i eslint -i eslint-config-invintus -i tap-spec",
+    "test": "tape test/*.js | tap-spec"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dependency-check": "^4.1.0",
+    "eslint": "^7.24.0",
+    "eslint-config-minlint": "^2.0.0",
+    "gray-matter": "^4.0.2",
+    "hyperstream": "^1.2.2",
+    "marked": "^2.0.3",
+    "mkdirp": "^1.0.4",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.2.2"
+  }
+}
