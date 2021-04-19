@@ -20,7 +20,7 @@ collections:
       - label: "video"
         name: "video"
         widget: "file"
-        default: "/uploads/cinnamon-roll.pdf"
+        default: "/uploads/cinnamon-roll.jpg"
         media_library:
           config:
             multiple: true
