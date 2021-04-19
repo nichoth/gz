@@ -1,1 +1,6 @@
-
+title: about things
+intro: this is the about body text
+team:
+  - name: foooo
+    position: barrrr
+    photo: /images/uploads/cinnamon-roll.jpg
