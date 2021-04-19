@@ -14,3 +14,6 @@
 
 * [netlify cms -- file widget](https://www.netlifycms.org/docs/widgets/#file)
 
+------------------------------------
+
+* [file collections](https://www.netlifycms.org/docs/collection-types/#file-collections)
