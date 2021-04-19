@@ -21,3 +21,9 @@
 
 * https://www.netlifycms.org/docs/configuration-options/#collections
 
+----------------------------------------
+
+We want to use 'file collections'. Need to parse the yml, then parse the md in
+the yml.
+
+'file collections' are best for a single page, vs many pages like blog posts
