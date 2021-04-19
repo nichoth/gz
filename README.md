@@ -13,3 +13,4 @@
 ----------------------------------
 
 * [netlify cms -- file widget](https://www.netlifycms.org/docs/widgets/#file)
+
