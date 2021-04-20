@@ -110,3 +110,4 @@ bundle.js
 # Local Netlify folder
 .netlify
 
+public/
