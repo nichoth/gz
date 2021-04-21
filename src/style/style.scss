@@ -2,3 +2,14 @@ body {
     // background-color: pink;
     text-align: center;
 }
+
+.nav {
+    margin: 4rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+div.video {
+    max-width: 800px;
+    margin: 0 auto;
+}

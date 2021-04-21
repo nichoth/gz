@@ -28,3 +28,10 @@ the yml.
 
 'file collections' are best for a single page, vs many pages like blog posts
  
+ ---------------------------------------------------
+
+* https://animate.style/
+
+----------------------------------------
+
+Could maybe do this website without a CMS at all

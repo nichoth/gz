@@ -21,21 +21,21 @@ function makeHs (file, baseName) {
             class: { append: baseName }
         },
         '#content': {
-            _appendHtml: marked( matter(file).content )
+            _appendHtml: file
         }
     })
 }
 
 function buildThem (inputDir, outputDir, templateFile, makeHs) {
     fs.readdir(inputDir, function (err, files) {
-        if (err) return
+        if (err) return console.log('err', err)
         console.log('files:  ', files)
         if (!files.length) return
 
         var names = []
         files.forEach(fileName => {
             var _path = path.join(inputDir, fileName)
-            var baseName = path.basename(fileName, '.md')
+            var baseName = path.basename(fileName, '.html')
 
             names.push(baseName)
 
@@ -55,19 +55,19 @@ function buildThem (inputDir, outputDir, templateFile, makeHs) {
 
         // run this once for all files -- for the index page
         // we need the all the files so we can make the nav
-        var hs = hyperstream({
-            '#content': {
-                _appendHtml: `<ul class="main-nav">
-                    ${names.map(name => `<li>
-                        <a href="/${name}">${name}</a>
-                    </li>`).join('')}
-                </ul>`
-            }
-        })
+        // var hs = hyperstream({
+        //     '#content': {
+        //         _appendHtml: `<ul class="main-nav">
+        //             ${names.map(name => `<li>
+        //                 <a href="/${name}">${name}</a>
+        //             </li>`).join('')}
+        //         </ul>`
+        //     }
+        // })
 
-        var ws = fs.createWriteStream(__dirname + '/public' + '/index.html')
-        var rs = fs.createReadStream(templatePath)
-        rs.pipe(hs).pipe(ws)
+        // var ws = fs.createWriteStream(__dirname + '/public' + '/index.html')
+        // var rs = fs.createReadStream(templatePath)
+        // rs.pipe(hs).pipe(ws)
     })
 
 }
